@@ -127,7 +127,7 @@
                         <a href="http://spectrumviewer.org" target="_blank">xiSPEC</a>.
                     </li>
                     <li>
-                        There is a 1GB size limit on uploaded files.
+                        There is a 10GB size limit on uploaded files.
                     </li>
                     <!-- <li>
                     For mzIdentML files, the DBSequence elements must include their sequence within their Seq child element. FASTA files uploaded alongside mzIdentML files are currently ignored.
