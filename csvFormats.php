@@ -1,13 +1,13 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 
     <head>
-        <?php
-        $pageName = "CSV Formats";
+        <title>xiVIEW | CSV Formats</title>
+            <?php
         include("head.php");
     ?>
-            <script type="text/javascript" src="./js/accordion.js"></script>
-            <script type="text/javascript" src="./js/directURL.js"></script>
+<!--            <script type="text/javascript" src="./js/accordion.js"></script>-->
+<!--            <script type="text/javascript" src="./js/directURL.js"></script>-->
     </head>
 
     <body>
@@ -17,7 +17,7 @@
         <!-- Main -->
         <div id="main">
             <div class="container">
-                <h1 class="page-header"><?php echo($pageName); ?></h1>
+                <h1 class="page-header">CSV Formats</h1>
 
                 <p>The tables below describe the formats for CSV input of peptide identifications.</p>
                 <br/>
@@ -335,7 +335,7 @@
                     </table>
                     <br/>
                     <p style="font-size: small;line-height: 1.5em;">
-                        *required if there are multiple alternative explanations for the same spectrum.</br>
+                        *required if there are multiple alternative explanations for the same spectrum.<br/>
                     </p>
                     <br/>
                 </div>
@@ -564,7 +564,7 @@
                     </table>
                     <br/>
                     <p style="font-size: small;line-height: 1.5em;">
-                        *required if there are multiple alternative explanations for the same spectrum.</br>
+                        *required if there are multiple alternative explanations for the same spectrum.<br/>
                     </p>
                     <br/>
                 </div>
@@ -573,5 +573,7 @@
         </div>
         <!-- MAIN -->
     </body>
-
+    <script>
+        website.accordian();
+    </script>
 </html>

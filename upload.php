@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 
     <head>
         <?php
@@ -92,14 +92,14 @@
                         and <a href="https://www.ncbi.nlm.nih.gov/pubmed/15317041" target="blank"> ms2</a>
                         (&amp; zip/gz archives of these). File extension must be '.mzML',
                         '.mgf', '.ms2' or '.zip'.
-                        </br>
+                        <br/>
 
                         <div style="font-size: 0.8em; line-height: 1.7em; margin-top:0.5em;">
                             If peak list data is uploaded then it must be complete, i.e. all spectra identified must
                             be present, or the upload process will result in an error.<br>
                             mzML tip: Filter out MS1 spectra to reduce file size and upload/parsing
                             time. (e.g. 'MS level 2-' in <a title="Proteowizard download link"
-                                href="http://proteowizard.sourceforge.net/downloads.shtml">MSconvert</a>)</br>
+                                href="http://proteowizard.sourceforge.net/downloads.shtml">MSconvert</a>)<br/>
                         </div>
                         <!-- mzML: Make sure to use centroided MS2 data! (e.g. use 'Peak picking' for profile data in <a title="Proteowizard download link" href="http://proteowizard.sourceforge.net/downloads.shtml">MSconvert</a>)</br> -->
                     </li>
@@ -107,11 +107,11 @@
                         formats:
                         <a title="FASTA" href="https://en.wikipedia.org/wiki/FASTA_format" target="blank">FASTA</a>
                         (file extension must be '.fasta'), sequences can also be contained
-                        in mzIdentML files.</br>
+                        in mzIdentML files.<br/>
                         <div style="font-size: 0.8em; line-height: 1.7em; margin-top:0.5em;">
                             If you do not provide a FASTA file, then your protein IDs must be valid UniProtKB accession
                             numbers.
-                            </br>
+                            <br/>
                             If you do provide a FASTA file, then your protein IDs must all match identifiers in the
                             FASTA file.
                         </div>

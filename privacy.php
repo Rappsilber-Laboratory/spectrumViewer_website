@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 
     <head>
+        <title>xiVIEW | Privacy</title>
         <?php
-        $pageName = "Privacy";
         include("head.php");
         ?>
     </head>
@@ -15,9 +15,9 @@
         <!-- Main -->
         <div id="main">
             <div class="container">
-                <h1 class="page-header"><?php echo($pageName); ?></h1>
+                <h1 class="page-header">Privacy</h1>
                 <ul>
-                    <li>xiView requires creating a user account; the account is used to provide
+                    <li>xiVIEW requires creating a user account; the account is used to provide
                         an index page to the data you have uploaded. This index page also
                         allows you to aggregate and/or compare your datasets.</li>
                     <li>We store your email address, which will only be used for password

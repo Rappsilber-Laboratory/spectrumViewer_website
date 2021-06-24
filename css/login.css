@@ -1,0 +1,132 @@
+body {
+    height: auto;
+    padding: 1em 2em;
+    font-size: 1em;
+}
+
+header {
+    border-top: 8px solid #aaa;
+}
+
+footer {
+    border-bottom: 8px solid #aaa;
+}
+
+
+label {
+    display: inline-block;
+    min-width: 8em;
+    line-height: 1.4em;
+    margin-right: 0.5em;
+}
+
+.control-group {
+    margin-bottom: 1em;
+    color: #44a;
+}
+
+.login input {
+    border: 1px solid #44a;
+    margin: 0;
+    color: #44a;
+}
+
+input[type=text], input[type=password], input[type=email] {
+    padding-left: 0.5em;
+    line-height: 1.4em; /* both needed for cross-browser alignment with label text */
+    height: 1.4em;
+}
+
+input[type=checkbox] {
+    margin-left: 1em;
+}
+
+.login input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #888;
+}
+
+.login input::-moz-placeholder { /* Firefox */
+    color: #888;
+    opacity: 1;
+}
+
+input:required:invalid, input:focus:invalid {
+    /* insert your own styles for invalid form input */
+    background: #fee;
+    border-color: red;
+}
+
+input:required:invalid ~ span, input:focus:invalid ~ span {
+    /* insert your own styles for invalid form input */
+    display: inline;
+}
+
+.error, .error2 {
+    display: none;
+    color: red;
+    margin-left: 1em;
+    padding: 0em 0.5em;
+    font-size: 0.8em;
+    line-height: 1em;
+}
+
+.revealOnFailure {
+    display: none;
+}
+
+header {
+    padding-bottom: 1em;
+}
+
+footer > p:first-of-type::before {
+    content: "Xi Administrator: ";
+}
+
+footer > p:last-of-type::before {
+    content: "© Rappsilber Laboratory, 2018";
+}
+
+hr.wideDivider {
+    margin: 1em 0em;
+}
+
+#msg {
+    /* transition: color 4s ease;
+    color: red; */
+}
+
+#msg.backToBlack {
+    color: inherit;
+}
+
+#msgModal {
+    width: 400px;
+    padding: 20px;
+}
+
+#spinBox {
+    width: 2em;
+    height: 4em;
+    position: relative;
+}
+
+.newUserSection {
+    display: none;
+}
+
+h3 {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.newUserSection form, #reset_password_form {
+    display: inline-block;
+}
+
+.topRight {
+    float: right;
+}
+
+.topRight button {
+    transition: none;
+}

@@ -18,20 +18,20 @@
     </div> <!-- headerbg -->
 </div> <!-- header -->
 
-<script type="text/javascript">
-    $( document ).ready(function() {
-    $('.menu').click(function(){
-    $('.header-top').slideToggle();
-    });
-    });
-</script>
+<!--<script type="text/javascript">-->
+<!--    $( document ).ready(function() {-->
+<!--    $('.menu').click(function(){-->
+<!--    $('.header-top').slideToggle();-->
+<!--    });-->
+<!--    });-->
+<!--</script>-->
 
-<div class="menu"></div>
-
-<div class="menu-top">
-    <div class="header-top">
-    <div class="header-top-bg">
-        <?php include('menuItems.php'); ?>
-    </div>
-    </div>
-</div>
+<!--<div class="menu"></div>-->
+<!---->
+<!--<div class="menu-top">-->
+<!--    <div class="header-top">-->
+<!--    <div class="header-top-bg">-->
+<!--        --><?php //include('menuItems.php'); ?>
+<!--    </div>-->
+<!--    </div>-->
+<!--</div>-->

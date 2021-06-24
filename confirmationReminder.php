@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 
     <head>
         <?php
@@ -75,8 +75,8 @@
                                 CLMSUI.loginForms.msgs = msgs;
                                 CLMSUI.loginForms.makeFooter();
                                 CLMSUI.loginForms.makeHelpButton();
-                                CLMSUI.loginForms.finaliseRecaptcha(
-                                    config.googleRecaptchaPublicKey);
+                                // CLMSUI.loginForms.finaliseRecaptcha(
+                                //     config.googleRecaptchaPublicKey);
                                 var spinner = CLMSUI.loginForms.getSpinner();
 
                                 var splitRegex = config.emailRegex.split(
@@ -117,8 +117,8 @@
                                     CLMSUI.loginForms.ajaxPost(e
                                         .target,
                                         {
-                                            "g-recaptcha-response": grecaptcha
-                                                .getResponse()
+                                            // "g-recaptcha-response": grecaptcha
+                                            //     .getResponse()
                                         },
                                         function()
                                         {
@@ -132,8 +132,8 @@
 
                     </script>
 
-                    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-                        async defer></script>
+<!--                    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"-->
+<!--                        async defer></script>-->
                 </div>
 
             </div>

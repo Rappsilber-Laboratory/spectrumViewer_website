@@ -9,17 +9,17 @@ html, body {
 	display: block;
 	height: 100%;
 }
-.stripes{
-/*
-	border-left: 5px solid #091D42;
-*/
-	padding-left: 20px;
-/*
-	border-right: 5px solid #091D42;
-*/
-	padding-right: 20px;
-	width: 350px;
-}
+/*.stripes{*/
+/*!**/
+/*	border-left: 5px solid #091D42;*/
+/**!*/
+/*	padding-left: 20px;*/
+/*!**/
+/*	border-right: 5px solid #091D42;*/
+/**!*/
+/*	padding-right: 20px;*/
+/*	width: 350px;*/
+/*}*/
 .menu{
 	display: none;
 }

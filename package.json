@@ -1,0 +1,72 @@
+{
+  "name": "xiVIEW-website",
+  "version": "0.0.0",
+  "description": "visualisation of crosslinking  mass spectrometry data",
+  "author": {
+    "name": "Colin Combe",
+    "email": "colin.combe@ed.ac.uk"
+  },
+  "contributors": [
+    {
+      "name": "Martin Graham",
+      "email": ""
+    },
+    {
+      "name": "Colin Combe",
+      "email": "colin.combe@ed.ac.uk"
+    },
+    {
+      "name": "Lars",
+      "email": ""
+    },
+    {
+      "name": "Lutz",
+      "email": ""
+    }
+  ],
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Rappsilber-Laboratory/xiVIEW_container.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Rappsilber-Laboratory/xiVIEW_container"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.6.0",
+    "eslint": "^7.2.0",
+    "file-loader": "^6.0.0",
+    "style-loader": "^1.2.1",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "scripts": {
+    "clean": "rm dist/*",
+    "start:dev": "webpack-dev-server --open --config webpack.dev.js",
+    "build-dev": "rm dist/*; webpack -d --mode development --config webpack.dev.js",
+    "build-prod": "rm dist/*; webpack -p --mode production --config webpack.prod.js"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "jquery": "~3.6.0",
+    "cookieconsent": "3.0.6",
+    "simple-popup-modal": "~1.1.3"
+  },
+  "keywords": [
+    "xiVIEW",
+    "crosslinking",
+    "mass spectrometry",
+    "protein",
+    "interactions"
+  ],
+  "main": "./xi3/js/website.js"
+}

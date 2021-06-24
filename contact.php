@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 
     <head>
+        <title>xiVIEW | Contact</title>
         <?php
-        $pageName = "Contact";
         include("head.php");
         ?>
     </head>
@@ -18,7 +18,7 @@
             <!-- Intro -->
             <section id="top" class="one contact-section">
                 <div class="container">
-                    <h1 class="page-header"><?php echo($pageName); ?></h1>
+                    <h1 class="page-header">Contact</h1>
                     <div class="contactGroup">
                         <table>
                             <tr>
@@ -102,7 +102,7 @@
                                             <img src="images/team/lutz.jpg" class="grayscale" />
                                             </a></li>
                                         </ul>
-                                        </br>
+                                        <br/>
                                         <div class="external-link">
                                             <p>
                                                 <strong>Lutz Fischer</strong>

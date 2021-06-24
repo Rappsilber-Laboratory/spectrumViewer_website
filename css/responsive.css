@@ -113,24 +113,24 @@
 	margin-left: 0px;
 }
 
-#infoPanel{
-	left: 0px;
-}
-#legendPanel{
-	left: 0px;
-}
-.controlsexamplespage{
-	left: 0px;
-}
-#networkContainer{
-	left: 0px;
-}
-.controlsFrontPage{
-	left: 0px;
-}
-#networkFrontPage{
-	left: 0px;
-}
+/*#infoPanel{*/
+/*	left: 0px;*/
+/*}*/
+/*#legendPanel{*/
+/*	left: 0px;*/
+/*}*/
+/*.controlsexamplespage{*/
+/*	left: 0px;*/
+/*}*/
+/*#networkContainer{*/
+/*	left: 0px;*/
+/*}*/
+/*.controlsFrontPage{*/
+/*	left: 0px;*/
+/*}*/
+/*#networkFrontPage{*/
+/*	left: 0px;*/
+/*}*/
 
 /*
 .container {
@@ -250,9 +250,9 @@
 
 @media only screen and (max-width : 640px) {
 
-#nav{
-	display: none;
-}
+/*#nav{*/
+/*	display: none;*/
+/*}*/
 
 .menu{
 	display: block;
@@ -262,9 +262,9 @@
 	margin-left: 0px;
 }
 
-#infoPanel{
-	left: 0px;
-}
+/*#infoPanel{*/
+/*	left: 0px;*/
+/*}*/
 /*
     body, input, select, textarea {
         font-size: 14pt;

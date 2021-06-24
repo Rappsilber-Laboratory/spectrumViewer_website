@@ -1,7 +1,22 @@
+connectionString.php
+xiSpecConfig.php
+XiDBConfig.conf
+xi_ini/*
 
-\.directory
+.idea/
+.idea
+package-lock.json
 
-*.mzML
+.cache/
+coverage/
+node_modules/
+*.log
 
-xiSPEC_sql_conn\.php
-
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

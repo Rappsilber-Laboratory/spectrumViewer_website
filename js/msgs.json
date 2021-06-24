@@ -1,0 +1,80 @@
+{
+    "en" : {
+        "emailInvalid": "Can't send password reset email due to invalid email address.",
+        "emailTaken": "Can't send password reset email. More than one username is registered with this email address.",
+        "emailEmpty": "Can't send password reset email. There is no associated email address for this username.",
+        "tokenShortError": "Token supplied is non-existent or too short.",
+        "tokenExpiredError": "Token has expired (2 hour limit). Please obtain a new email via the login page.",
+        "tokenMismatchError": "Token not matched to any user, maybe overridden by a newer request or already used. Password update failed.",
+        "passwordEmailCatchall": "An Error occurred when attempting to send a retrieve password email.",
+        "passwordResetSuccess": "Password reset complete. Thank you.",
+        "resetPasswordEmailInfo": "An email has been sent to the associated address. Use the link in the email within 2 hours to reset your password.",
+        "passwordResetCatchall": "An Error occurred when resetting a password.",
+        "resetPasswordEmailHeader": "Xi Password Reset",
+        "resetPasswordEmailBody": "User: $1 - you may use this link to reset your xiView account's password, within 2 hours of receiving this email<br><A href='$2'>$2</A>",
+
+        "genDatabaseError": "Sorry, there has been a database error. Alert your Xi administrator.",
+        "databaseConnectError": "An Error occurred when attempting to connect to the Xi database.<br>If this continues please contact your Xi Administrator.",
+        "userDatabaseError": "An Error occurred when reading a user's details in the database.",
+        "connectionErrorTitle": "Connection Error",
+
+        "updatePermissionError": "You don't have permission to update the details of another user",
+        "userDatabaseUpdateCatchall": "An Error occurred when updating a user's details in the database.",
+
+        "deletePermissionError": "You don't have permission to delete a user",
+        "deletedFailedEmailWarning": "User deleted but failed to send email to registered address",
+        "deletedMissingEmailWarning": "User deleted but user had no valid email address to send deletion email to",
+        "deleteCatchallError": "An Error occurred when attempting to delete the user",
+        "deleteUserEmailHeader": "Xi Account Deletion",
+        "deleteUserEmailBody": "Your account on Xi was deleted either by yourself or by an administrator. You can re-register by visiting the Xi registration page.",
+
+        "newUserUniqueEmailError": "< The email address $1 is already in use. Please choose another.",
+        "newUserUniqueNameError": "< The username $1 is already taken. Please choose another.",
+        "newUserEmailError": "Mailer Error: $1",
+        "newUserEmailInfo": "New user <strong>$1</strong> added. A confirmation email has been sent, <strong>you MUST click the link in that email</strong> to give consent to us storing you're data in accordance with our <a href='privacy.php'> Privacy Statement</a>. You will not be able to log in until you have done so.",
+        "newUserErrorCatchall": "An Error occurred when adding a new user to the database",
+        "newUserEmailHeader": "xiVIEW account creation",
+        "newUserEmailBody": "<p>A request has been received to register this email address with xiVIEW.</p><p>Please read the following text and click the following link to confirm your acceptance of our privacy policy.</p><H4>Privacy Policy</H4> <p>xiVIEW only asks for and retains email addresses and no other personal data. Email addresses are used only for resetting passwords and not for marketing or bulk communication. <br>Your uploaded data is kept private; we will not make use of your data or provide access to others. <br>We will use the number of user accounts and number of datasets uploaded when we report usage statistics. <br>Cookies are used to record that you have logged in, and, optionally, to store the configuration of the filters in the 'My Data' page. <br>This is a beta/development version of this website and logging is currently enabled on the web server, we will only use this for debugging purposes. </P> If that's ok, then click this link: <A href='$1'>I Accept These Terms</A>",
+
+        "confirmationResendEmailInfo": "Confirmation email resent",
+        "confirmationResendEmailHeader": "xiVIEW confirmation email",
+        "confirmationResendEmailBody": "<p>A request has been received to register this email address with xiVIEW.</p><p>Please read the following text and click the following link to confirm your acceptance of our privacy policy.</p><H4>Privacy Policy</H4> <p>xiVIEW only asks for and retains email addresses and no other personal data. Email addresses are used only for resetting passwords and not for marketing or bulk communication. <br>Your uploaded data is kept private; we will not make use of your data or provide access to others. <br>We will use the number of user accounts and number of datasets uploaded when we report usage statistics. <br>Cookies are used to record that you have logged in, and, optionally, to store the configuration of the filters in the 'My Data' page. <br>This is a beta/development version of this website and logging is currently enabled on the web server, we will only use this for debugging purposes. </P> If that's ok, then click this link: <A href='$1'>I Accept These Terms</A>",
+
+        "captchaError": "Captcha Failure",
+
+        "clientNameValidationInfo": "Between 4 and 16 Alphanumeric characters only please",
+        "clientPasswordValidationInfo": "At least 6 characters required",
+        "clientEmailValidationInfo": "You must use a valid email address",
+
+        "clientRevokeSuperuser": "This change will revoke your own superuser role and cannot be undone (by yourself).<br>Are You Sure?",
+        "clientResetPassword": "This will send a link to the user's email to reset their password.<br>Are You Sure?",
+        "clientDeleteUser": "This user's email will be deleted, and their account and associated data will be disabled.<br>Restoration will require you to re-enter and update the email address, and then issue a password reset request. The account will re-activate once the user has reset their password.<br>Are You Sure?",
+        "clientDeleteYourself": "Your e-mail address will be deleted, your account and associated data will be disabled, and you will be returned to the Xi login page. Only contacting a Xi Admin can undo this action.<br>Are You Sure?",
+
+        "pleaseConfirm": "Please Confirm",
+        "proceedDelete": "Proceed with Delete",
+        "proceedEmail": "Proceed with Email",
+        "proceedUpdate": "Proceed with Update",
+        "cancel": "Cancel this Action",
+
+		"GDPRacceptance": "Thank you, your acceptance of Xi's privacy terms has been noted",
+
+        "canAddSearches": "Can add up to $1 searches",
+        "cannotAddSearches": "Cannot add new searches",
+        "ownSearchesOnly": "Can only see own searches",
+        "canSeeAllSearches": "Can see ALL searches",
+        "canSeePublicSearches": "Can see other users' public searches",
+        "searchesPerDay": "$1 per day",
+        "superuser": "Superuser",
+
+        "superuserRequired": "Superuser status required to change this",
+
+        "xiAdminEmail": "xiadmin@ed.ac.uk",
+
+        "xiBack": "Back",
+		"xiLogout": "Log Out",
+		"xiLogoutURL": "./php/logout.php",
+        "xiHelp": "Help",
+        "xiHelpURL": "../../xidocs/html/userGUI/index.html"
+    }
+}

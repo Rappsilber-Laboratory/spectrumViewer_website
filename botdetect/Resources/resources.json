@@ -1,0 +1,7 @@
+{
+  "CaptchaStyleNameNotFoundErrorMessage": "The requested captchaStyle '%s' is not defined in the botdetect.xml!",
+  "CaptchaConfigFileNotFoundErrorMessage": "Could not find BotDetect configuration file '%s'!",
+  "MemcachedNotFoundErrorMessage": "ERROR: The Simple API is configured to use Memcached as a session storage -- but Memcached persistence provider does not seem to be referenced in the project!",
+  "RedisNotFoundErrorMessage": "ERROR: The Simple API is configured to use Redis as a session storage -- but Redis persistence provider does not seem to be referenced in the project!",
+  "SQLiteNotFoundErrorMessage": "ERROR: By default BotDetect PHP Simple API requires SQLite3 php extension."
+}

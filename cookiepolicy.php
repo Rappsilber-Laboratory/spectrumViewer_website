@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 
     <head>
         <?php
@@ -21,14 +21,14 @@
 
                 <p>Last updated: September 18, 2017</p>
 
-                <p>XiSpec ("us", "we", or "our") uses cookies on the http://spectrumviewer.org
+                <p>xiVIEW ("us", "we", or "our") uses cookies on the http://xiview.org
                     website (the "Service"). By using the Service, you consent to the
                     use of cookies.</p>
 
                 <p>Our Cookies Policy explains what cookies are, how we use cookies, how
                     third-parties we may partner with may use cookies on the Service,
                     your choices regarding cookies and further information about cookies.
-                    Cookies Policy created by <a href="https://termsfeed.com" rel="nofollow">TermsFeed</a>                    for XiSpec.</p>
+                    Cookies Policy created by <a href="https://termsfeed.com" rel="nofollow">TermsFeed</a>                    for XiView.</p>
 
                 <h3>What are cookies</h3>
 
@@ -41,7 +41,7 @@
                     on your personal computer or mobile device when you go offline, while
                     session cookies are deleted as soon as you close your web browser.</p>
 
-                <h3>How XiSpec uses cookies</h3>
+                <h3>How xiVIEW uses cookies</h3>
 
                 <p>When you use and access the Service, we may place a number of cookies
                     files in your web browser.</p>
@@ -102,9 +102,6 @@
                 <ul>
                     <li>
                         <p>AllAboutCookies: <a href="http://www.allaboutcookies.org/">http://www.allaboutcookies.org/</a></p>
-                    </li>
-                    <li>
-                        <p>Network Advertising Initiative: <a href="http://www.networkadvertising.org/">http://www.networkadvertising.org/</a></p>
                     </li>
                 </ul>
 
