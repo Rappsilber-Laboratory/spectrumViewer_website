@@ -1,6 +1,6 @@
 <?php
-include ('../../connectionString.php');
-include ('../../vendor/php/utils.php');
+include ('../../../connectionString.php');
+include ('./php/utils.php');
 
 try {
     //error_log (print_r ($_POST, true));
@@ -38,7 +38,7 @@ try {
 
 } catch (Exception $e) {
     $date = date("d-M-Y H:i:s");
-     $msg = ($e->getMessage()) ? ($e->getMessage()) : $getTextString("databaseConnectError");
+     $msg = ($e->getMessage()) ;//? ($e->getMessage()) : $getTextString("databaseConnectError");
     error_log (print_r ($msg, true));
      echo (json_encode(array ("status"=>"fail", "msg"=> $msg." ".$date, "revalidate"=> true)));
 }

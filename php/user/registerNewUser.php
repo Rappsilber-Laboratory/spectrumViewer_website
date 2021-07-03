@@ -2,20 +2,23 @@
 include ('../../../connectionString.php');
 include ('../../../../xi_ini/emailInfo.php');
 include ('../utils.php');
-
+session_start();
 
 try {
     //error_log (print_r ($_POST, true));   // This printed passwords in plain text to the php log. Lol.
 
-    $config = json_decode (file_get_contents ("../json/config.json"), true);
+//    $config = json_decode (file_get_contents ("../json/config.json"), true);
 
 //    $captcha = validatePostVar ("g-recaptcha-response", '/.{1,}/', false, "recaptchaWidget");
-    $email = validatePostVar ("email", $config["emailRegex"], true);
+    $email = validatePostVar ("email", '/.*@.*/', true);//$config["emailRegex"], true);
     $username = validatePostVar ("username", '/^[a-zA-Z0-9-_.]{4,16}/');
     $pword = validatePostVar ("pass", '/.{6,}/');
 
+
     // validate captcha
-//    validateCaptcha ($captcha);
+    validateCaptcha ();//$captcha);
+
+
 
     $dbconn = pg_connect($connectionString);
     try {
@@ -50,8 +53,8 @@ try {
         $addUserToGroup = pg_prepare($dbconn, "addUserToGroup", "INSERT INTO user_in_group (user_id, group_id) VALUES($1, $2)");
         $result = pg_execute($dbconn, "addUserToGroup", [$returnedID, "12"]);
 
-		require_once    ('../../vendor/php/PHPMailer-master/src/PHPMailer.php');
-		require_once    ('../../vendor/php/PHPMailer-master/src/SMTP.php');
+		require_once    ('../PHPMailer-master/src/PHPMailer.php');
+		require_once    ('../PHPMailer-master/src/SMTP.php');
 
 		$url = $urlRoot."userGUI/GDPRacceptance.html?gdpr_token=".$gdpr_token;
 		$mail = makePHPMailerObj ($mailInfo, $email, $username, getTextString("newUserEmailHeader"));
@@ -71,7 +74,7 @@ try {
     } catch (Exception $e) {
          pg_query("ROLLBACK");
          $date = date("d-M-Y H:i:s");
-         $msg = ($e->getMessage()) ? ($e->getMessage()) : getTextString("newUserErrorCatchall");
+         $msg = ($e->getMessage()) ?: getTextString("newUserErrorCatchall");
 		 error_log (print_r ($msg, true));
          echo (json_encode(array ("status"=>"fail", "msg"=> $msg."<br>".$date, "revalidate"=> true)));
     }

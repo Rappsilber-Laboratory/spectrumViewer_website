@@ -1,21 +1,12 @@
 <?php
-include ('../../connectionString.php');
-include ('../../../xi_ini/emailInfo.php');
-include ('../../vendor/php/utils.php');
+include ('../../../connectionString.php');
+include ('../../../../xi_ini/emailInfo.php');
+include ('../utils.php');
+session_start();
 
 try {
-    //error_log (print_r ($_POST, true));   // This printed passwords in plain text to the php log. Lol.
-
-    $config = json_decode (file_get_contents ("../json/config.json"), true);
-
-    $captcha = validatePostVar ("g-recaptcha-response", '/.{1,}/', false, "recaptchaWidget");
-    $email = validatePostVar ("email", $config["emailRegex"], true);
-    // $username = validatePostVar ("username", '/^[a-zA-Z0-9-_.]{4,16}/');
-    // $pword = validatePostVar ("pass", '/.{6,}/');
-
-    // validate captcha
-    validateCaptcha ($captcha);
-
+    $email = validatePostVar ("email", '/.*@.*/', true);
+    validateCaptcha ();
     $dbconn = pg_connect($connectionString);
     try {
         /* test if username already exists */
@@ -33,10 +24,10 @@ try {
         $returnRow = pg_fetch_assoc ($result);
         $gdpr_token = $returnRow["gdpr_token"];
         if ($gdpr_token) {
-            require_once    ('../../vendor/php/PHPMailer-master/src/PHPMailer.php');
-    		require_once    ('../../vendor/php/PHPMailer-master/src/SMTP.php');
+            require_once    ('../PHPMailer-master/src/PHPMailer.php');
+    		require_once    ('../PHPMailer-master/src/SMTP.php');
 
-    		$url = $urlRoot."userGUI/GDPRacceptance.html?gdpr_token=".$gdpr_token;
+    		$url = $urlRoot."xiNET_website/php/user/GDPRacceptance.html?gdpr_token=".$gdpr_token;
     		$mail = makePHPMailerObj ($mailInfo, $email, "RESEND", getTextString("confirmationResendEmailHeader"));
     		$mail->MsgHTML(getTextString("confirmationResendEmailBody", [$url]));
         }

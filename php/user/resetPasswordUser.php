@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ('../../vendor/php/utils.php');
+include ('../utils.php');
 if (empty ($_SESSION['session_name'])) {
     // from http://stackoverflow.com/questions/199099/how-to-manage-a-redirect-request-after-a-jquery-ajax-call
     ajaxLoginRedirect();

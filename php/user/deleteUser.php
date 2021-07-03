@@ -1,13 +1,13 @@
 <?php
 session_start();
-include ('../../vendor/php/utils.php');
+include ('../utils.php');
 if (empty ($_SESSION['session_name'])) {
     // from http://stackoverflow.com/questions/199099/how-to-manage-a-redirect-request-after-a-jquery-ajax-call
     ajaxLoginRedirect();
 }
 else { 
-    include('../../connectionString.php');
-    include ('../../../xi_ini/emailInfo.php');
+    include('../../../connectionString.php');
+    include ('../../../../xi_ini/emailInfo.php');
     
     $dbconn = pg_connect($connectionString);
     try {
@@ -65,8 +65,8 @@ else {
          pg_query("COMMIT");
         
         if (filter_var ($email, FILTER_VALIDATE_EMAIL)) {                     
-            require_once ('../vendor/php/PHPMailer-master/src/PHPMailer.php');
-            require_once ('../vendor/php/PHPMailer-master/src/SMTP.php');
+            require_once ('../PHPMailer-master/src/PHPMailer.php');
+            require_once ('../PHPMailer-master/src/SMTP.php');
 
             $mail = makePHPMailerObj ($mailInfo, $email, $username, getTextString("deleteUserEmailHeader"));
             $mail->MsgHTML(getTextString("deleteUserEmailBody"));

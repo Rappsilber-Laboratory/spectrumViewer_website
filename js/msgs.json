@@ -46,7 +46,6 @@
         "clientPasswordValidationInfo": "At least 6 characters required",
         "clientEmailValidationInfo": "You must use a valid email address",
 
-        "clientRevokeSuperuser": "This change will revoke your own superuser role and cannot be undone (by yourself).<br>Are You Sure?",
         "clientResetPassword": "This will send a link to the user's email to reset their password.<br>Are You Sure?",
         "clientDeleteUser": "This user's email will be deleted, and their account and associated data will be disabled.<br>Restoration will require you to re-enter and update the email address, and then issue a password reset request. The account will re-activate once the user has reset their password.<br>Are You Sure?",
         "clientDeleteYourself": "Your e-mail address will be deleted, your account and associated data will be disabled, and you will be returned to the Xi login page. Only contacting a Xi Admin can undo this action.<br>Are You Sure?",

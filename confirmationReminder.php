@@ -2,20 +2,11 @@
 <html lang="en">
 
     <head>
+        <title>xiVIEW | Email confirmation reminder</title>
         <?php
-        $pageName = "Email confirmation reminder";
+        session_start();
         include("head.php");
         ?>
-
-            <link rel="stylesheet" href="../vendor/css/example.wink.css" />
-            <link rel="stylesheet" href="../vendor/css/common.css" />
-            <link rel="stylesheet" href="../userGUI/css/login.css" />
-
-            <script src="../vendor/js/jquery-3.4.1.js"></script>
-            <script src="../vendor/js/hideShowPassword.js"></script>
-            <script src="../vendor/js/spin.js"></script>
-            <script src="../userGUI/js/forms.js"></script>
-
     </head>
 
     <body>
@@ -38,7 +29,7 @@
 
                 <div class="login">
 
-                    <form id="register_form" name="register_form" method="post" action="../userGUI/php/resendConfirmationEmail.php"
+                    <form id="register_form" name="register_form" method="post" action="./php/user/resendConfirmationEmail.php"
                         class="login-form">
 
                         <div class="control-group">
@@ -48,9 +39,31 @@
                             <span class="error2"></span>
                         </div>
 
-                        <div id="recaptchaWidget" data-sitekey="getFromConfig.json"></div>
-                        <span class="error">&lt; Please check the captcha form</span>
-                        <br/>
+                        <div class="control-group">
+                            <label for="CaptchaCode">Answer a random question:
+                            </label>
+                            <?php
+                            $url = 'http://api.textcaptcha.com/example.json';
+                            $captcha = json_decode(file_get_contents($url),true);
+                            error_log (print_r ($captcha, true));
+
+                            if (!$captcha) {
+                                $captcha = array( // fallback challenge
+                                    'q'=>'Is ice hot or cold?',
+                                    'a'=>array(md5('cold'))
+                                );
+                                // + capture error info & log
+                            }
+
+                            // display question to user as part of form
+                            echo htmlentities($captcha['q']);
+
+                            // store answers in session
+                            $_SESSION['captcha_ans'] = $captcha['a'];
+                            ?>
+                            <input name="CaptchaCode" id="CaptchaCode" type="text" />
+                        </div>
+
 
                         <input name="Submit" value="Resend confirmation email" type="submit" class="btn btn-1a"
                         />
@@ -61,74 +74,75 @@
                     <div id="msg"></div>
 
                     <script type="text/javascript">
-                        //$(document).ready(function(e) {
-                        var onloadCallback = function()
-                        {
-                            $.when(
-                                $.getJSON("../userGUI/json/config.json"),
-                                $.getJSON("../userGUI/json/msgs.json")
-                            ).done(function(configxhr, msgsxhr)
-                            {
-
-                                var config = configxhr[0];
-                                var msgs = msgsxhr[0];
-                                CLMSUI.loginForms.msgs = msgs;
-                                CLMSUI.loginForms.makeFooter();
-                                CLMSUI.loginForms.makeHelpButton();
-                                // CLMSUI.loginForms.finaliseRecaptcha(
-                                //     config.googleRecaptchaPublicKey);
-                                var spinner = CLMSUI.loginForms.getSpinner();
-
-                                var splitRegex = config.emailRegex.split(
-                                    "/");
-                                $("#email").attr("pattern", splitRegex[1]);
-
-                                // var nameValidationMsg = CLMSUI.loginForms.getMsg("clientNameValidationInfo");
-                                // $("#username").attr("oninvalid", "this.setCustomValidity('"+nameValidationMsg+"')");
-                                // $("#username-errorMsg").text("< "+nameValidationMsg);
-                                //
-                                // var passwordValidationMsg = CLMSUI.loginForms.getMsg("clientPasswordValidationInfo");
-                                // $("#pass").attr("oninvalid", "this.setCustomValidity('"+passwordValidationMsg+"')");
-                                // $("#pass-errorMsg").text("< "+passwordValidationMsg);
-
-                                var emailValidationMsg = CLMSUI.loginForms
-                                    .getMsg("clientEmailValidationInfo");
-                                $("#email-errorMsg").text("< " +
-                                    emailValidationMsg);
-
-                                // Example 3:
-                                // - When checkbox changes, toggle password
-                                //   visibility based on its 'checked' property
-                                $('#show-password').change(function()
-                                {
-                                    $('#pass').hideShowPassword(
-                                        $(this).prop(
-                                            'checked'));
-                                });
-
-
-                                // divert form submit action to this javascript function
-                                $("#register_form").submit(function(e)
-                                {
-                                    $(".error2").css("display",
-                                        "none");
-                                    spinner.spin(document.getElementById(
-                                        "spinBox"));
-                                    CLMSUI.loginForms.ajaxPost(e
-                                        .target,
-                                        {
-                                            // "g-recaptcha-response": grecaptcha
-                                            //     .getResponse()
-                                        },
-                                        function()
-                                        {
-                                            spinner.stop();
-                                        });
-                                    e.preventDefault();
-                                });
-                            });
-                        }
-                        //});
+                        website.confirmationReminder();
+                        // //$(document).ready(function(e) {
+                        // var onloadCallback = function()
+                        // {
+                        //     $.when(
+                        //         $.getJSON("../userGUI/json/config.json"),
+                        //         $.getJSON("../userGUI/json/msgs.json")
+                        //     ).done(function(configxhr, msgsxhr)
+                        //     {
+                        //
+                        //         var config = configxhr[0];
+                        //         var msgs = msgsxhr[0];
+                        //         window.msgs = msgs;
+                        //         CLMSUI.loginForms.makeFooter();
+                        //         CLMSUI.loginForms.makeHelpButton();
+                        //         // CLMSUI.loginForms.finaliseRecaptcha(
+                        //         //     config.googleRecaptchaPublicKey);
+                        //         var spinner = CLMSUI.loginForms.getSpinner();
+                        //
+                        //         var splitRegex = config.emailRegex.split(
+                        //             "/");
+                        //         $("#email").attr("pattern", splitRegex[1]);
+                        //
+                        //         // var nameValidationMsg = CLMSUI.loginForms.getMsg("clientNameValidationInfo");
+                        //         // $("#username").attr("oninvalid", "this.setCustomValidity('"+nameValidationMsg+"')");
+                        //         // $("#username-errorMsg").text("< "+nameValidationMsg);
+                        //         //
+                        //         // var passwordValidationMsg = CLMSUI.loginForms.getMsg("clientPasswordValidationInfo");
+                        //         // $("#pass").attr("oninvalid", "this.setCustomValidity('"+passwordValidationMsg+"')");
+                        //         // $("#pass-errorMsg").text("< "+passwordValidationMsg);
+                        //
+                        //         var emailValidationMsg = CLMSUI.loginForms
+                        //             .getMsg("clientEmailValidationInfo");
+                        //         $("#email-errorMsg").text("< " +
+                        //             emailValidationMsg);
+                        //
+                        //         // Example 3:
+                        //         // - When checkbox changes, toggle password
+                        //         //   visibility based on its 'checked' property
+                        //         $('#show-password').change(function()
+                        //         {
+                        //             $('#pass').hideShowPassword(
+                        //                 $(this).prop(
+                        //                     'checked'));
+                        //         });
+                        //
+                        //
+                        //         // divert form submit action to this javascript function
+                        //         $("#register_form").submit(function(e)
+                        //         {
+                        //             $(".error2").css("display",
+                        //                 "none");
+                        //             spinner.spin(document.getElementById(
+                        //                 "spinBox"));
+                        //             CLMSUI.loginForms.ajaxPost(e
+                        //                 .target,
+                        //                 {
+                        //                     // "g-recaptcha-response": grecaptcha
+                        //                     //     .getResponse()
+                        //                 },
+                        //                 function()
+                        //                 {
+                        //                     spinner.stop();
+                        //                 });
+                        //             e.preventDefault();
+                        //         });
+                        //     });
+                        // }
+                        // //});
 
                     </script>
 

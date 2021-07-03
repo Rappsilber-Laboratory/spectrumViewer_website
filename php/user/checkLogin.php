@@ -1,5 +1,5 @@
 <?php
-include('../../connectionString.php');
+include('../../../connectionString.php');
 // Connect to server
 $dbconn = pg_connect($connectionString)or die("cannot connect");
 $date = date("d-M-Y H:i:s");
@@ -31,7 +31,7 @@ try {
 		}
         // if no gdpr_token
 		else if (!isset($line['gdpr_timestamp'])) {
-			    $redirectTo = "../xiNET_website/confirmationReminder.php";
+			    $redirectTo = "./confirmationReminder.php";
                 //error_log (print_r ($redirectTo, true));
                 echo (json_encode(array ("status"=>"email confirmation required", "redirect"=> $redirectTo)));    
 	    }

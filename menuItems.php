@@ -8,7 +8,7 @@
                     } else {
                         echo '<a href="upload.php" data-hover="Upload new data set">Upload</a><br/>';
                         echo '<a href="../history/history.html" data-hover="Back to data set list" data-no-instant>My Data</a><br/>';
-                        echo '<a href="../userGUI/php/logout.php" data-hover="Sign out">Sign Out</a><br/>';
+                        echo '<a href="./php/user/logout.php" data-hover="Sign out">Sign Out</a><br/>';
                     }
                 ?>
                 <br/>

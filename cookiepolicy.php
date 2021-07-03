@@ -5,7 +5,6 @@
         <?php
     $pageName = "Examples";
     include("head.php");
-    include("xiSPEC_scripts.php");
     ?>
     </head>
 

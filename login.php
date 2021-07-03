@@ -2,19 +2,10 @@
 <html lang="en">
 
     <head>
+        <title>xiVIEW | Sign In</title>
         <?php
-        $pageName = "Sign In";
         include("head.php");
         ?>
-
-            <link rel="stylesheet" href="../vendor/css/example.wink.css" />
-            <link rel="stylesheet" href="../vendor/css/common.css" />
-            <link rel="stylesheet" href="../userGUI/css/login.css" />
-
-            <script src="../vendor/js/jquery-3.4.1.js"></script>
-            <script src="../vendor/js/hideShowPassword.js"></script>
-            <script src="../vendor/js/spin.js"></script>
-            <script src="../userGUI/js/forms.js"></script>
     </head>
 
     <body>
@@ -24,10 +15,10 @@
         <!-- Main -->
         <div id="main">
             <div class="container">
-                <h1 class="page-header"><?php echo($pageName); ?></h1>
+                <h1 class="page-header">Sign In</h1>
                 <div class="login">
 
-                    <form id="login_form" name="login_form" method="post" action="../userGUI/php/checkLogin.php" class="login-form">
+                    <form id="login_form" name="login_form" method="post" action="./php/user/checkLogin.php" class="login-form">
                         <div class="control-group">
                             <label for="login-name">Username</label>
                             <input type="text" value="" placeholder="Username" id="login-name" name="login-name" pattern="^[a-zA-Z0-9-_.]{4,16}" oninput="this.setCustomValidity('')" required autofocus/>
@@ -38,6 +29,7 @@
                         <div class="control-group">
                             <label for="login-pass">Password</label>
                             <input type="password" value="" placeholder="Password" id="login-pass" name="login-pass" required/>
+                            <i id="icon" onclick="website.hideShowPassword('login-pass');" class="fa fa-xi fa-eye"></i>
                             <span class="error2"></span>
                         </div>
 
@@ -46,7 +38,7 @@
 
                     <hr class="wideDivider">
                     <h3>Forgotten Password?</h3>
-                    <form id="reset_password_form" name="reset_password_form" action="../userGUI/userRequestPassword.html">
+                    <form id="reset_password_form" name="reset_password_form" action="./userRequestPassword.php">
                         <input name="Submit" value="Reset Password" type="submit" class="btn btn-1a"/>
                     </form>
 
@@ -59,44 +51,45 @@
                     </div>
 
                     <script type="text/javascript">
-                        $(document).ready(function(e) {
-                            $.when (
-                                $.getJSON("../userGUI/json/config.json"),
-                                $.getJSON("../userGUI/json/msgs.json")
-                            ).done (function (configxhr, msgsxhr) {
-                                var msgs = msgsxhr[0];
-                                var config = configxhr[0];
-                                CLMSUI.loginForms.msgs = msgs;
-                                // CLMSUI.loginForms.makeFooter();
-                                // CLMSUI.loginForms.makeHelpButton();
-
-                                // function checkConnection (url) {
-                                //     $.ajax({
-                                //         url: url,
-                                //         cache: false,
-                                //         timeout:1000,
-                                //         error: function (jqXHR, textStatus) {
-                                //             //alert("Request failed: " + textStatus );
-                                //         },
-                                //         success: function () {
-                                $(".newUserSection").css("display", "block");
-                                //        }
-                                //    });
-                                // }
-                                // checkConnection("./createAccount.php"); // show new user section if reg page is reachable
-
-                                var nameValidationMsg = CLMSUI.loginForms.getMsg("clientNameValidationInfo");
-                                $("#login-name").attr("oninvalid", "this.setCustomValidity('"+nameValidationMsg+"')");
-                                $("#login-name-errorMsg").text("< "+nameValidationMsg);
-
-                                // divert form submit action to this javascript function
-                                $("#login_form").submit (function(e) {
-                                    $(".error2").css("display", "none");
-                                    CLMSUI.loginForms.ajaxPost (e.target);
-                                    e.preventDefault();
-                                });
-                            });
-                        });
+                        website.login();
+                        // $(document).ready(function(e) {
+                        //     $.when (
+                        //         $.getJSON("../userGUI/json/config.json"),
+                        //         $.getJSON("../userGUI/json/msgs.json")
+                        //     ).done (function (configxhr, msgsxhr) {
+                        //         var msgs = msgsxhr[0];
+                        //         var config = configxhr[0];
+                        //         window.msgs = msgs;
+                        //         // CLMSUI.loginForms.makeFooter();
+                        //         // CLMSUI.loginForms.makeHelpButton();
+                        //
+                        //         // function checkConnection (url) {
+                        //         //     $.ajax({
+                        //         //         url: url,
+                        //         //         cache: false,
+                        //         //         timeout:1000,
+                        //         //         error: function (jqXHR, textStatus) {
+                        //         //             //alert("Request failed: " + textStatus );
+                        //         //         },
+                        //         //         success: function () {
+                        //         $(".newUserSection").css("display", "block");
+                        //         //        }
+                        //         //    });
+                        //         // }
+                        //         // checkConnection("./createAccount.php"); // show new user section if reg page is reachable
+                        //
+                        //         var nameValidationMsg = CLMSUI.loginForms.getMsg("clientNameValidationInfo");
+                        //         $("#login-name").attr("oninvalid", "this.setCustomValidity('"+nameValidationMsg+"')");
+                        //         $("#login-name-errorMsg").text("< "+nameValidationMsg);
+                        //
+                        //         // divert form submit action to this javascript function
+                        //         $("#login_form").submit (function(e) {
+                        //             $(".error2").css("display", "none");
+                        //             CLMSUI.loginForms.ajaxPost (e.target);
+                        //             e.preventDefault();
+                        //         });
+                        //     });
+                        // });
                     </script>
                 </div>
 

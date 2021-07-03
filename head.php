@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./css/login.css"/>
 
     <script type="text/javascript" src="./dist/website.js"></script>
+
     <link rel="stylesheet" href="./node_modules/cookieconsent/build/cookieconsent.min.css"/>
     <script>
         website.cookieconsent();

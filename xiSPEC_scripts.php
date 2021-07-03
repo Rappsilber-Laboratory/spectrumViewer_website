@@ -1,3 +1,4 @@
+<script type="text/javascript" src="../vendor/js/jquery-3.4.1.js"></script>
 <script type="text/javascript" src="../vendor/js/d3.js"></script>
 <script type="text/javascript" src="../vendor/js/colorbrewer.js"></script>
 <script type="text/javascript" src="../vendor/js/underscore.js"></script>

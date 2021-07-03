@@ -1,6 +1,6 @@
 <?php
-include ('../../connectionString.php');
-include ('../../vendor/php/utils.php');
+include ('../../../connectionString.php');
+include ('./php/utils.php');
 
 try {   
     $ptoken = validatePostVar ("token", '/.{28,}/', false, null, getTextString("tokenShortError"));

@@ -1,25 +1,4 @@
 <!DOCTYPE html>
-
-<!--
-//  CLMS-UI
-//  Copyright 2015 Colin Combe, Rappsilber Laboratory, Edinburgh University
-//
-//  This file is part of CLMS-UI.
-//
-//  CLMS-UI is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  CLMS-UI is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with CLMS-UI.  If not, see <http://www.gnu.org/licenses/>.
--->
-
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -52,34 +31,35 @@
         <p id="msg"></p>
         <p><a href="../xiNET_website/login.php">Sign In</a></p>
         <script type="text/javascript">
-            $(document).ready (function() {
-                $.getJSON("./json/msgs.json", function (msgs) {
-                    CLMSUI.loginForms.msgs = msgs;
-                    CLMSUI.loginForms.makeFooter();
-                    CLMSUI.loginForms.makeHelpButton();
-
-                    var passwordValidationMsg = CLMSUI.loginForms.getMsg("clientPasswordValidationInfo");
-                    $("#new-login-pass").attr("oninvalid", "this.setCustomValidity('"+passwordValidationMsg+"')");
-                    $("#pass-errorMsg").text("< "+passwordValidationMsg);
-
-                    // https://css-tricks.com/snippets/javascript/get-url-variables/
-                    function getQueryVariable (variable)  {
-                       var query = window.location.search.substring(1);
-                       var vars = query.split("&");
-                       for (var i=0;i<vars.length;i++) {
-                            var pair = vars[i].split("=");
-                            if(pair[0] == variable){return pair[1];}
-                       }
-                       return false;
-                    }
-
-					CLMSUI.loginForms.simpleAjaxPost (
-						{method: "POST", url: "php/GDPRacceptance.php"},
-						{token: getQueryVariable("gdpr_token")},
-						function () { $("#msg").html(CLMSUI.loginForms.getMsg("GDPRacceptance")); }
-					)
-                });
-            });
+            webiste.gdprAcceptance();
+            // $(document).ready (function() {
+            //     $.getJSON("./json/msgs.json", function (msgs) {
+            //         window.msgs = msgs;
+            //         CLMSUI.loginForms.makeFooter();
+            //         CLMSUI.loginForms.makeHelpButton();
+            //
+            //         var passwordValidationMsg = CLMSUI.loginForms.getMsg("clientPasswordValidationInfo");
+            //         $("#new-login-pass").attr("oninvalid", "this.setCustomValidity('"+passwordValidationMsg+"')");
+            //         $("#pass-errorMsg").text("< "+passwordValidationMsg);
+            //
+            //         // https://css-tricks.com/snippets/javascript/get-url-variables/
+            //         function getQueryVariable (variable)  {
+            //            var query = window.location.search.substring(1);
+            //            var vars = query.split("&");
+            //            for (var i=0;i<vars.length;i++) {
+            //                 var pair = vars[i].split("=");
+            //                 if(pair[0] == variable){return pair[1];}
+            //            }
+            //            return false;
+            //         }
+            //
+			// 		CLMSUI.loginForms.simpleAjaxPost (
+			// 			{method: "POST", url: "php/GDPRacceptance.php"},
+			// 			{token: getQueryVariable("gdpr_token")},
+			// 			function () { $("#msg").html(CLMSUI.loginForms.getMsg("GDPRacceptance")); }
+			// 		)
+            //     });
+            // });
 
         </script>
     </div>

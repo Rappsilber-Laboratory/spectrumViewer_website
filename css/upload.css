@@ -31,21 +31,21 @@
     color: #fff;
     background-color: #666;
 }
-#pxd_submit{
-    margin-top:1em;
-    line-height: 1.8em;
-}
-#pxd_submitBtn{
-    position: relative;
-    font-size: 0.8em;
-    display: inline;
-    float: right;
-    padding: 1em;
-    bottom: 1.5em;
-}
-#pxd_submitInfo{
-    display:inline;
-}
+/*#pxd_submit{*/
+/*    margin-top:1em;*/
+/*    line-height: 1.8em;*/
+/*}*/
+/*#pxd_submitBtn{*/
+/*    position: relative;*/
+/*    font-size: 0.8em;*/
+/*    display: inline;*/
+/*    float: right;*/
+/*    padding: 1em;*/
+/*    bottom: 1.5em;*/
+/*}*/
+/*#pxd_submitInfo{*/
+/*    display:inline;*/
+/*}*/
 #uploadProgress{
     flex-grow: 1;
     margin: 10px;
@@ -78,9 +78,9 @@
     animation: spin 2s linear infinite;
     display: inline-block;
 }
-#pxd_error{
-    color: red;
-}
+/*#pxd_error{*/
+/*    color: red;*/
+/*}*/
 
 @keyframes spin {
     0% { transform: rotate(0deg); }

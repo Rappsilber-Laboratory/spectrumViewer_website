@@ -912,10 +912,10 @@ form table td {
   padding: 1px 15px;
 }
 
-.tooltip {
-    position: relative;
-    display: block;
-}
+/*.tooltip {*/
+/*    position: relative;*/
+/*    display: block;*/
+/*}*/
 
 .tooltip .tooltiptext {
     visibility: hidden;
@@ -966,6 +966,22 @@ section.two.contact-section2 {
 .contact-section2 .external-link {
     margin-top: 20px;
 }
+
+
+/* fa */
+.fa-xi {
+    font-size:1.5em;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+    cursor:pointer;
+    padding: 0 1px;
+    user-select: none;
+}
+/*.fa-xi:hover {*/
+/*    color: #091D42;*/
+/*    background:white;*/
+/*}*/
 
 /* NARROW */
 
